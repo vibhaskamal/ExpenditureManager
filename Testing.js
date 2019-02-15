@@ -13,6 +13,74 @@ function sum() {
       }
 
     document.getElementById("output").value = sum;
-
-    
   }
+
+  function addInputBox(){
+    console.log(getLastEditableInputBox());
+    var numberOfInputBoxes = getNumberOfInputBoxElements();
+  
+    // Container <div> where dynamic content will be placed
+    var container = document.getElementById("newInputBox");
+    // Clear previous contents of the container
+    while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
+    }
+
+    //Adding category text for the new input box
+    var span = document.getElementById("span");
+    span.value = "123";
+    var text = document.createTextNode("New:");
+
+    span.appendChild(text);
+
+    // Create an <input> element, set its type and name attributes
+    var input = document.createElement("input");
+    input.id = "inputBox_" + (numberOfInputBoxes + 1);
+    input.type = "text";
+    input.value = 0;
+    input.style = "height: 20; margin-bottom: 0";
+    container.appendChild(input);
+    // Append a line break 
+    container.appendChild(document.createElement("br"));
+  }
+
+  function getNumberOfInputBoxElements(){
+    var inputs;
+    var index;
+    var numberOfInputBoxes = 0;
+
+    inputs = document.getElementsByTagName('input');
+    for (index = 0; index < inputs.length; ++index) {
+        // Getting the list of input boxes that are not read only
+        if(inputs[index].readOnly == false) {
+          numberOfInputBoxes++;
+        }
+    }
+
+    return numberOfInputBoxes;
+  }
+
+  function getLastEditableInputBox(){
+    var inputs;
+    var lastEditableInputBox;
+
+    inputs = document.getElementsByTagName('input');
+
+    for (i = 0; i < inputs.length; i++) {
+      // Getting the list of input boxes that are not read only
+      if(inputs[i].readOnly == false) {
+        lastEditableInputBox = inputs[i];
+      }
+    }
+
+    return lastEditableInputBox;
+  }
+
+  function addElement(parentId, elementTag, elementId, html) {
+    // Adds an element to the document
+    var p = document.getElementById(parentId);
+    var newElement = document.createElement(elementTag);
+    newElement.setAttribute('id', elementId);
+    newElement.innerHTML = html;
+    p.appendChild(newElement);
+}

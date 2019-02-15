@@ -18,33 +18,34 @@
                 Food:
                 <div class="input-field inline">
                     <input id="food" type="text" value="0" style="height: 20; margin-bottom: 0">
-                </div>
-            </div>
-            <div class="col s12" style="margin-bottom: 0 rem;">
+                </div><br>
+
                 Groceries:
                 <div class="input-field inline">
                     <input id="groceries" type="text" value="0" style="height: 20; margin-bottom: 0">
-                </div>
+                </div><br>
                 
-            </div>
-            <div class="col s12" style="margin-bottom: 0 rem;">
                 Other:
                 <div class="input-field inline">
                     <input id="other" type="text" value="0" style="height: 20; margin-bottom: 0">
-                </div>
+                </div><br>
+
+                <span id="span"></span>
+                <div class="input-field inline" id="newInputBox"></div>
             </div>
         </div>
 
         
         <a class="waves-effect waves-light btn"  onclick="sum()">Sum</a><br><br>
 
+        <a class="waves-effect waves-light btn"  onclick="addInputBox()">Add another category</a><br><br>
+
         Output: 
         <div class="input-field inline">
             <input id="output" type="text" value="0" readonly style="height: 20; margin-bottom: 0">
         </div>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        
 
+        <script type="text/javascript" src="js/materialize.min.js"></script>
 
     </body>
 </html>
