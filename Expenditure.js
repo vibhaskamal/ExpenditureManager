@@ -50,32 +50,13 @@ function sum() {
 }
 
   function addInputBox(){
-    // var parentId = "newInputBox";
-    // var elementTag = "input";
-    // var elementId = getNumberOfInputBoxElements() + 1;
-    // var html = "New ";
-    // addElement(parentId, elementTag, elementId, html);
-    console.log(getLastEditableInputBox());
+    // console.log(getLastEditableInputBox());
     var numberOfInputBoxes = getNumberOfInputBoxElements();
   
     // Container <div> where dynamic content will be placed
     var container = document.getElementById("inputBoxes");
-    // Clear previous contents of the container
-    // while (container.hasChildNodes()) {
-    //     container.removeChild(container.lastChild);
-    // }
-
-    //Adding category text for the new input box
-    // var span = document.getElementById("span");
-    // var text = document.createTextNode("New:");
-    // span.appendChild(text);
-    // var textNode = document.createTextNode("New:");
-    // span.style = "display: inline-block;";
     var text = document.createTextNode("New");
-    // span.appendChild(text);
     container.appendChild(text);
-    // container.value = "Hello";
-    // container.removeChild(document.createElement("br"));
 
     // Create an <input> element, set its type and name attributes
     var input = document.createElement("input");
@@ -84,19 +65,12 @@ function sum() {
     input.value = 0;
     input.style = "height: 20; margin-bottom: 0;";
     input.innerHTML = "Trial";
-    // var text2 = document.createTextNode("This just got added");
-    // input.appendChild(text2);
-    // container.appendChild(text2);
-    // container.innerHTML = "This just got added";
     
     container.appendChild(input);
     
-    
-    // span.appendChild(document.createElement("br")); 
     // Append a line break 
     container.appendChild(document.createElement("br"));
     container.appendChild(document.createElement("br"));
-    // container.appendChild(document.createElement("div"));
     
   }
 
