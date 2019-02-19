@@ -1,16 +1,5 @@
 function sum() {
-
-    // var foodInput = document.getElementById("food").value;
-    // var groceriesInput = document.getElementById("groceries").value;
-    // var otherInput = document.getElementById("other").value;
-
-    // var categories = [foodInput, groceriesInput, otherInput];
     var sum = 0;
-
-    // for (i = 0; i < categories.length; i++) { 
-    //     var intParsedInput = parseInt(categories[i]);
-    //     sum += intParsedInput;
-    //   }
 
     var inputBoxes = getListOfEditableInpuxBoxElements();
 
@@ -52,13 +41,7 @@ function sum() {
     container.appendChild(document.createElement("br"));
   }
 
-
-  function getNumberOfInputBoxElements(){
-    var listOfEditableInputBoxes = getListOfEditableInpuxBoxElements();
-    return listOfEditableInputBoxes.length;
-  }
-
-
+  
   function getListOfEditableInpuxBoxElements(){
     var inputs;
     var index;
@@ -76,21 +59,13 @@ function sum() {
   }
 
 
+  function getNumberOfInputBoxElements(){
+    var listOfEditableInputBoxes = getListOfEditableInpuxBoxElements();
+    return listOfEditableInputBoxes.length;
+  }
+
+
   function getLastEditableInputBox(){
-    // var inputs;
-    // var lastEditableInputBox;
-
-    // inputs = document.getElementsByTagName('input');
-
-    // for (i = 0; i < inputs.length; i++) {
-    //   // Getting the list of input boxes that are not read only
-    //   if(inputs[i].readOnly == false) {
-    //     lastEditableInputBox = inputs[i];
-    //   }
-    // }
-
-    // return lastEditableInputBox;
-
     var editableInputBoxes = getListOfEditableInpuxBoxElements();
     return editableInputBoxes[editableInputBoxes.length - 1];
   }
