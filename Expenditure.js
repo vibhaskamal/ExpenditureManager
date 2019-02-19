@@ -47,20 +47,6 @@ function sum() {
 
 
   function getNumberOfInputBoxElements(){
-    // var inputs;
-    // var index;
-    // var numberOfInputBoxes = 0;
-
-    // inputs = document.getElementsByTagName('input');
-    // for (index = 0; index < inputs.length; ++index) {
-    //     // Getting the list of input boxes that are not read only
-    //     if(inputs[index].readOnly == false) {
-    //       numberOfInputBoxes++;
-    //     }
-    // }
-    // console.log(numberOfInputBoxes);
-    // return numberOfInputBoxes;
-
     var listOfEditableInputBoxes = getListOfEditableInpuxBoxElements();
     return listOfEditableInputBoxes.length;
   }
@@ -85,19 +71,22 @@ function sum() {
 
 
   function getLastEditableInputBox(){
-    var inputs;
-    var lastEditableInputBox;
+    // var inputs;
+    // var lastEditableInputBox;
 
-    inputs = document.getElementsByTagName('input');
+    // inputs = document.getElementsByTagName('input');
 
-    for (i = 0; i < inputs.length; i++) {
-      // Getting the list of input boxes that are not read only
-      if(inputs[i].readOnly == false) {
-        lastEditableInputBox = inputs[i];
-      }
-    }
+    // for (i = 0; i < inputs.length; i++) {
+    //   // Getting the list of input boxes that are not read only
+    //   if(inputs[i].readOnly == false) {
+    //     lastEditableInputBox = inputs[i];
+    //   }
+    // }
 
-    return lastEditableInputBox;
+    // return lastEditableInputBox;
+
+    var editableInputBoxes = getListOfEditableInpuxBoxElements();
+    return editableInputBoxes[editableInputBoxes.length - 1];
   }
 
 
