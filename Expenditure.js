@@ -1,16 +1,23 @@
 function sum() {
 
-    var foodInput = document.getElementById("food").value;
-    var groceriesInput = document.getElementById("groceries").value;
-    var otherInput = document.getElementById("other").value;
+    // var foodInput = document.getElementById("food").value;
+    // var groceriesInput = document.getElementById("groceries").value;
+    // var otherInput = document.getElementById("other").value;
 
-    var categories = [foodInput, groceriesInput, otherInput];
+    // var categories = [foodInput, groceriesInput, otherInput];
     var sum = 0;
 
-    for (i = 0; i < categories.length; i++) { 
-        var intParsedInput = parseInt(categories[i]);
-        sum += intParsedInput;
-      }
+    // for (i = 0; i < categories.length; i++) { 
+    //     var intParsedInput = parseInt(categories[i]);
+    //     sum += intParsedInput;
+    //   }
+
+    var inputBoxes = getListOfEditableInpuxBoxElements();
+
+    for (i = 0; i < inputBoxes.length; i++) {
+      var intParsedInput = parseInt(inputBoxes[i].value);
+      sum += intParsedInput;
+    }
 
     document.getElementById("output").value = sum;
   }
@@ -55,7 +62,6 @@ function sum() {
   function getListOfEditableInpuxBoxElements(){
     var inputs;
     var index;
-    var numberOfInputBoxes = 0;
     var listOfEditableInputBoxes = [];
 
     inputs = document.getElementsByTagName('input');
