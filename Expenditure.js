@@ -64,7 +64,6 @@ function sum() {
     input.type = "text";
     input.value = 0;
     input.style = "height: 20; margin-bottom: 0;";
-    input.innerHTML = "Trial";
     
     container.appendChild(input);
     
