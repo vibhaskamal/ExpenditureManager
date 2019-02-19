@@ -15,6 +15,7 @@ function sum() {
     document.getElementById("output").value = sum;
   }
 
+
   function addInputBox(){
     console.log(getLastEditableInputBox());
     var numberOfInputBoxes = getNumberOfInputBoxElements();
@@ -44,21 +45,44 @@ function sum() {
     container.appendChild(document.createElement("br"));
   }
 
+
   function getNumberOfInputBoxElements(){
+    // var inputs;
+    // var index;
+    // var numberOfInputBoxes = 0;
+
+    // inputs = document.getElementsByTagName('input');
+    // for (index = 0; index < inputs.length; ++index) {
+    //     // Getting the list of input boxes that are not read only
+    //     if(inputs[index].readOnly == false) {
+    //       numberOfInputBoxes++;
+    //     }
+    // }
+    // console.log(numberOfInputBoxes);
+    // return numberOfInputBoxes;
+
+    var listOfEditableInputBoxes = getListOfEditableInpuxBoxElements();
+    return listOfEditableInputBoxes.length;
+  }
+
+
+  function getListOfEditableInpuxBoxElements(){
     var inputs;
     var index;
     var numberOfInputBoxes = 0;
+    var listOfEditableInputBoxes = [];
 
     inputs = document.getElementsByTagName('input');
     for (index = 0; index < inputs.length; ++index) {
         // Getting the list of input boxes that are not read only
         if(inputs[index].readOnly == false) {
-          numberOfInputBoxes++;
+          listOfEditableInputBoxes.push(inputs[index]);
         }
     }
-
-    return numberOfInputBoxes;
+    // console.log(listOfEditableInputBoxes);
+    return listOfEditableInputBoxes;
   }
+
 
   function getLastEditableInputBox(){
     var inputs;
@@ -75,6 +99,7 @@ function sum() {
 
     return lastEditableInputBox;
   }
+
 
   function addElement(parentId, elementTag, elementId, html) {
     // Adds an element to the document
