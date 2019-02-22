@@ -84,4 +84,11 @@ function sum() {
     return category;
   }
 
+  function removeInputBox() {
+    var lastCategory = getLastEditableInputBox();
+    var lastCategoryId = lastCategory.id;
+    var element = document.getElementById(lastCategoryId);
+    element.parentNode.removeChild(lastCategoryId);
+}
+
 
