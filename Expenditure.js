@@ -55,7 +55,9 @@ function sum() {
   
     // Container <div> where dynamic content will be placed
     var container = document.getElementById("inputBoxes");
-    var text = document.createTextNode("New");
+    var categoryName = popUpInputBox();
+    // var text = document.createTextNode("New");
+    var text = document.createTextNode(categoryName);
     container.appendChild(text);
 
     // Create an <input> element, set its type and name attributes
@@ -63,7 +65,7 @@ function sum() {
     input.id = "inputBox_" + (numberOfInputBoxes + 1);
     input.type = "text";
     input.value = 0;
-    input.style = "height: 20; margin-bottom: 0;";
+    input.style = "height: 20; margin-bottom: 0; text-align:center";
     
     container.appendChild(input);
     
@@ -71,6 +73,15 @@ function sum() {
     container.appendChild(document.createElement("br"));
     container.appendChild(document.createElement("br"));
     
+  }
+
+  function popUpInputBox(){
+    var category = prompt("Please enter a category:", "");
+    if (category == null || category == "") {
+      category = "New";
+    }
+
+    return category;
   }
 
 
