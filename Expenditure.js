@@ -55,10 +55,15 @@ function sum() {
   
     // Container <div> where dynamic content will be placed
     var container = document.getElementById("inputBoxes");
-    var categoryName = popUpInputBox();
-    // var text = document.createTextNode("New");
-    var text = document.createTextNode(categoryName);
-    container.appendChild(text);
+
+    // var categoryName = popUpInputBox();
+    // // var text = document.createTextNode("New");
+    // var text = document.createTextNode(categoryName);
+    // container.appendChild(text);
+    var span = document.createElement("span");
+    span.textContent = popUpInputBox();
+    // document.getElementById("123").innerHTML = popUpInputBox();
+    container.appendChild(span);
 
     // Create an <input> element, set its type and name attributes
     var input = document.createElement("input");
@@ -84,11 +89,21 @@ function sum() {
     return category;
   }
 
-  function removeInputBox() {
-    var lastCategory = getLastEditableInputBox();
-    var lastCategoryId = lastCategory.id;
-    var element = document.getElementById(lastCategoryId);
-    element.parentNode.removeChild(lastCategoryId);
-}
+//   function removeInputBox() {
+//     var lastCategory = getLastEditableInputBox();
+//     var lastCategoryId = lastCategory.id;
+//     var element = document.getElementById(lastCategoryId);
+//     element.parentNode.removeChild(lastCategoryId);
+// }
 
+  function removeInputBox() {
+    var inputBoxeElements = document.getElementById("inputBoxes");
+    var numberOfElementsAssociatedWithAnInputBox = 4;
+    if (inputBoxeElements){
+      for (var i = 0; i < numberOfElementsAssociatedWithAnInputBox; i++){
+        inputBoxeElements.removeChild(inputBoxeElements.lastElementChild);
+      }
+    }
+    
+  }
 
