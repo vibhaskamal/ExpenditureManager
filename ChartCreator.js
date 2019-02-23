@@ -5,7 +5,6 @@ function createChart() {
         var inputBox = inputBoxElements[i];
         visualizationData.push([inputBox.textContent, parseInt(inputBox.value)]);
     }
-    console.log(visualizationData);
 
     google.charts.load("current", {packages:["corechart"]});
     google.charts.setOnLoadCallback(drawChart);
@@ -19,7 +18,6 @@ function createChart() {
     //     ['Sleep',    7]
     // ]);
     var data = google.visualization.arrayToDataTable(visualizationData);
-    console.log(data);
 
     var options = {
         title: 'Expenditure Distribution',
