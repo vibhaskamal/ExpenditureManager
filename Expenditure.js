@@ -98,8 +98,9 @@ function sum() {
 
   function removeInputBox() {
     var inputBoxeElements = document.getElementById("inputBoxes");
+    var inputBoxesLeft = getNumberOfInputBoxElements();
     var numberOfElementsAssociatedWithAnInputBox = 4;
-    if (inputBoxeElements){
+    if (inputBoxesLeft != 0){
       for (var i = 0; i < numberOfElementsAssociatedWithAnInputBox; i++){
         inputBoxeElements.removeChild(inputBoxeElements.lastElementChild);
       }
