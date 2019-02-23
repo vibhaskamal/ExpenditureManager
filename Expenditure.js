@@ -66,11 +66,11 @@ function sum() {
     input.id = "inputBox_" + (numberOfInputBoxes + 1);
     input.type = "text";
     input.value = 0;
+    input.textContent = span.textContent;
     input.style = "height: 20; margin-bottom: 0; text-align:center";
     
     container.appendChild(input);
-    
-    // Append a line break 
+
     container.appendChild(document.createElement("br"));
     container.appendChild(document.createElement("br"));
     

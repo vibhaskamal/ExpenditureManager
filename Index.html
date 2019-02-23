@@ -7,25 +7,29 @@
 
         <!-- Custom CSS for this app -->
         <link href="css/custom.css" rel="stylesheet">
+
+        <script src = "Expenditure.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src = "ChartCreator.js"></script>     
     
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
 
-        <script src = "Expenditure.js"></script>
+        
         <center>
             <h3>Categories</h3>
 
             <div class="row">
                 <div class="col s12" style="margin-bottom: 0 rem;">
                     <div class="input-field inline" id="inputBoxes">
-                        <span>Food</span>
-                        <input id="food" type="text" value="0" style="height: 20; margin-bottom: 0; text-align:center"><br><br>
+                        <!-- <span>Food</span>
+                        <input id="food" type="text" textContent = "Food" value="0" style="height: 20; margin-bottom: 0; text-align:center"><br><br>
                         <span>Groceries</span>
-                        <input id="groceries" type="text" value="0" style="height: 20; margin-bottom: 0; text-align:center"><br><br>
-                        <span>Other</span>
-                        <input id="other" type="text" value="0" style="height: 20; margin-bottom: 0; text-align:center"><br><br>
+                        <input id="groceries" type="text" textContent = "Groceries" value="0" style="height: 20; margin-bottom: 0; text-align:center"><br><br> -->
+                        <!-- <span>Other</span>
+                        <input id="other" type="text" value="0" style="height: 20; margin-bottom: 0; text-align:center"><br><br> -->
                     </div>
 
                 </div>
@@ -40,9 +44,14 @@
             Total: 
             <div class="input-field inline">
                 <input id="output" type="text" value="0" readonly style="height: 20; margin-bottom: 0; text-align:center">
-            </div>
+            </div><br><br>
+
+            <a class="waves-effect waves-light btn"  style="border-radius: 30px;"  onclick="createChart()">Create Chart</a>
+            <div id="donutchart" style="width: 900px; height: 500px;"></div>
+
         </center>
         <script type="text/javascript" src="js/materialize.min.js"></script>
 
     </body>
+    
 </html>
