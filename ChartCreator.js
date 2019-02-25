@@ -18,6 +18,7 @@ function createChart() {
     //     ['Sleep',    7]
     // ]);
     var data = google.visualization.arrayToDataTable(visualizationData);
+    // console.log(data.jc);
 
     var options = {
         title: 'Expenditure Distribution',
@@ -25,6 +26,8 @@ function createChart() {
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-    chart.draw(data, options);
+    if (data.js != null){
+        chart.draw(data, options);
+    }
     }
 }
