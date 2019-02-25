@@ -26,8 +26,7 @@ function createChart() {
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-    if (data.js != null){
-        chart.draw(data, options);
-    }
+    chart.draw(data, options);
+
     }
 }
