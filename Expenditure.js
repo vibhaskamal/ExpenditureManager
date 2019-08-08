@@ -1,3 +1,5 @@
+// Resetting the repo
+
 function sum() {
     var sum = 0;
 
