@@ -60,21 +60,26 @@ function sum() {
     var container = document.getElementById("inputBoxes");
 
     var span = document.createElement("span");
+
     span.textContent = popUpInputBox();
-    container.appendChild(span);
 
-    // Create an <input> element, set its type and name attributes
-    var input = document.createElement("input");
-    input.id = "inputBox_" + (numberOfInputBoxes + 1);
-    input.type = "text";
-    input.value = 0;
-    input.textContent = span.textContent;
-    input.style = "height: 20; margin-bottom: 0; text-align:center";
-    
-    container.appendChild(input);
+    if (span.textContent){
+      container.appendChild(span);
 
-    container.appendChild(document.createElement("br"));
-    container.appendChild(document.createElement("br"));
+      // Create an <input> element, set its type and name attributes
+      var input = document.createElement("input");
+      input.id = "inputBox_" + (numberOfInputBoxes + 1);
+      input.type = "text";
+      input.value = 0;
+      input.textContent = span.textContent;
+      input.style = "height: 20; margin-bottom: 0; text-align:center";
+      
+      container.appendChild(input);
+  
+      container.appendChild(document.createElement("br"));
+      container.appendChild(document.createElement("br"));
+  
+    }
     
   }
 
@@ -82,10 +87,13 @@ function sum() {
   function popUpInputBox(){
     var category = prompt("Please enter a category:", "");
     if (category == null || category == "") {
-      category = "New";
+      // category = "New";
+      return null;
     }
-
-    return category;
+    else{
+      return category;
+    }
+    
   }
 
 
